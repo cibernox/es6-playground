@@ -1,22 +1,18 @@
-// Nothing yet
-
+// Layout
 img.logo{
   float: left;
   margin-top: -7px;
 }
-
 .navbar-inner a.brand{
   padding: 0px 10px 0px 10px;
-  span{
+  span {
     position: relative;
     top: 10px;
     left: 5px;
   }
 }
 
-
-#results{
-  border: 0px;
-  width: 100%;
-  height: 450px;
+// Posting form
+#posting-config .btn-primary{
+  height: 60px;
 }
