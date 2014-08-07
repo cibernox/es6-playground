@@ -1,14 +1,15 @@
-import Ember from "ember";
+import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  queryParams: ['environment', 'scenario'],
+  queryParams: ['environment', 'scenario', 'example'],
   environment: null,
   scenario: null,
+  example: null,
   environments: [
-    { id: "uat", value: "http://localhost:5000" },
-    { id: "dev", value: "http://localhost:5000" },
-    { id: "si", value: "http://localhost:5000" },
-    { id: "test", value: "http://localhost:5000" }
+    { id: 'uat', value: 'http://localhost:5000' },
+    { id: 'dev', value: 'http://localhost:5000' },
+    { id: 'si', value: 'http://localhost:5000' },
+    { id: 'test', value: 'http://localhost:5000' }
   ],
 
   // CPs
@@ -17,12 +18,15 @@ export default Ember.ArrayController.extend({
   }.property('scenario'),
 
   currentExample: function(){
-    var exampleId = this.get("exampleId");
-    console.log('calculating currentExample');
-    if (exampleId) {
-      return this.get('currentScenario.examples').findBy('id', exampleId);
-    } else {
-      return this.get('currentScenario.examples.firstObject');
-    }
-  }.property('currentScenario.examples.firstObject', 'exampleId')
+    var exampleIndex = parseInt(this.get('example')) || 1,
+            examples = this.get('currentScenario.examples');
+
+    return examples && examples.findBy('index', exampleIndex);
+  }.property('currentScenario.examples.@each.index', 'example'),
+
+  // Observers
+  resetExampleIndex: function() {
+    this.set('example', 1);
+  }.observes('currentScenario')
+
 });

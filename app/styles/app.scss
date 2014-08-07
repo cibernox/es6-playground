@@ -1,3 +1,5 @@
+$default-separation: 14px;
+
 // Layout
 img.logo{
   float: left;
@@ -17,16 +19,22 @@ img.logo{
   height: 60px;
 }
 
+// Scenario detail
+#examples-nav {
+  margin-bottom: $default-separation;
+}
+
+// Example detail
 .example {
   display: flex;
 }
 
 .example-form {
   flex: 1;
-  margin: 0 14px;
+  margin: 0 $default-separation;
   .btn { float: right; }
 }
 .example-output {
   flex: 1;
-  margin: 0 14px;
+  margin: 0 $default-separation;
 }

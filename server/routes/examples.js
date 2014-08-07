@@ -1,7 +1,7 @@
 var example1 = {
   id: '1',
   index: 1,
-  description: "Do bla bla and also bla",
+  description: "Change player name",
   scenario: '1',
   fields: [
     { name: "Name", value: "John" },
@@ -11,7 +11,7 @@ var example1 = {
 var example2 = {
   id: '2',
   index: 2,
-  description: "Second example of scenario 1",
+  description: "Perform a player substitution",
   scenario: '1',
   fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
@@ -21,7 +21,7 @@ var example2 = {
 var example3 = {
   id: '3',
   index: 3,
-  description: "3rd example of scenario 1",
+  description: "Set result",
   scenario: '1',
   fields: [
     { name: "Home goals", value: 1 },
@@ -31,7 +31,7 @@ var example3 = {
 var example4 = {
   id: '4',
   index: 1,
-  description: "1st example of scenario 2",
+  description: "Set minute",
   scenario: '2',
   fields: [
     { name: "Minute", value: "90" },
@@ -39,8 +39,17 @@ var example4 = {
 };
 var example5 = {
   id: '5',
+  index: 2,
+  description: "Add extra time",
+  scenario: '2',
+  fields: [
+    { name: "Extra minutes", value: "5" },
+  ]
+};
+var example6 = {
+  id: '6',
   index: 1,
-  description: "1st example of scenario 3",
+  description: "Perform substituion in a given minute",
   scenario: '3',
   fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
@@ -48,16 +57,16 @@ var example5 = {
     { name: "Minute", value: 55 }
   ]
 };
-var example6 = {
-  id: '6',
+var example7 = {
+  id: '7',
   index: 1,
-  description: "1st example of scenario 4",
+  description: "Set classification",
   scenario: '4',
   fields: [
     { name: "Classification", value: "1" }
   ]
 };
-var examples = [example1, example2, example3, example4, example5, example6]
+var examples = [example1, example2, example3, example4, example5, example6, example7]
 
 module.exports = function(app) {
   var express = require('express');
