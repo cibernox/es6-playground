@@ -14,8 +14,8 @@ var example2 = {
   description: "Second example of scenario 1",
   scenario: '1',
   fields: [
-    { name: "Name", value: "John" },
-    { name: "Age", value: null, options: [1,2,3,4,5,6] }
+    { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
+    { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]
 };
 var example3 = {
@@ -24,8 +24,8 @@ var example3 = {
   description: "3rd example of scenario 1",
   scenario: '1',
   fields: [
-    { name: "Name", value: "John" },
-    { name: "Age", value: null, options: [1,2,3,4,5,6] }
+    { name: "Home goals", value: 1 },
+    { name: "Away goals", value: 2 }
   ]
 };
 var example4 = {
@@ -34,8 +34,7 @@ var example4 = {
   description: "1st example of scenario 2",
   scenario: '2',
   fields: [
-    { name: "Name", value: "John" },
-    { name: "Age", value: null, options: [1,2,3,4,5,6] }
+    { name: "Minute", value: "90" },
   ]
 };
 var example5 = {
@@ -44,8 +43,9 @@ var example5 = {
   description: "1st example of scenario 3",
   scenario: '3',
   fields: [
-    { name: "Name", value: "John" },
-    { name: "Age", value: null, options: [1,2,3,4,5,6] }
+    { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
+    { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
+    { name: "Minute", value: 55 }
   ]
 };
 var example6 = {
@@ -54,8 +54,7 @@ var example6 = {
   description: "1st example of scenario 4",
   scenario: '4',
   fields: [
-    { name: "Name", value: "John" },
-    { name: "Age", value: null, options: [1,2,3,4,5,6] }
+    { name: "Classification", value: "1" }
   ]
 };
 var examples = [example1, example2, example3, example4, example5, example6]
