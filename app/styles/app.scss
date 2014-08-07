@@ -16,3 +16,17 @@ img.logo{
 #posting-config .btn-primary{
   height: 60px;
 }
+
+.example {
+  display: flex;
+}
+
+.example-form {
+  flex: 1;
+  margin: 0 14px;
+  .btn { float: right; }
+}
+.example-output {
+  flex: 1;
+  margin: 0 14px;
+}
