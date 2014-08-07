@@ -2,8 +2,10 @@
   <div class="col-sm-4 form-group">
     <label for="host">Environment:</label>
     {{view Ember.Select content=environments
-      optionValuePath="content.value"
-      optionLabelPath="content.name"
+      optionValuePath="content.id"
+      optionLabelPath="content.id"
+      value=environment
+      prompt="--- Please select a environment ---"
       class="form-control"
     }}
   </div>
@@ -11,6 +13,8 @@
     <label for="scenario">Scenario:</label>
     {{view Ember.Select content=this
       optionLabelPath="content.name"
+      optionValuePath="content.name"
+      value=scenario
       prompt="--- Please select a scenario ---"
       class="form-control"}}
   </div>

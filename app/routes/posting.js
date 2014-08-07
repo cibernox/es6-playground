@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     start: function(){
-      alert("starting");
+      alert("Let's run " + this.controller.scenario + " in " + this.controller.environment);
     }
   }
 });
