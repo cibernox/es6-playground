@@ -12,8 +12,8 @@
   <div class="col-sm-4 form-group">
     <label for="scenario">Scenario:</label>
     {{view Ember.Select content=this
-      optionLabelPath="content.name"
-      optionValuePath="content.name"
+      optionLabelPath="content.description"
+      optionValuePath="content.description"
       value=scenario
       prompt="--- Please select a scenario ---"
       class="form-control"}}
@@ -34,7 +34,7 @@
     <div class="well example-form">
       <button class="btn btn-primary" {{action "runExample"}}>Run</button>
       <h3>Example {{currentExample.index}}: {{currentExample.description}}</h3>
-      {{#each currentExample.fields}}
+      {{#each currentExample.editable_fields}}
         <div class="form-group">
           <label for="value">{{name}}</label>
           {{#if options}}
@@ -49,7 +49,7 @@
       <h3>Result</h3>
       {{#if currentExample}}
         {<br/>
-          {{#each currentExample.fields}}
+          {{#each currentExample.editable_fields}}
             &nbsp;&nbsp;&nbsp;&nbsp;{{name}}: {{value}}, <br/>
           {{/each}}
         }<br/>

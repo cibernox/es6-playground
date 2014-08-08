@@ -3,7 +3,7 @@ var example1 = {
   index: 1,
   description: "Change player name",
   scenario: '1',
-  fields: [
+  editable_fields: [
     { name: "Name", value: "John" },
     { name: "Age", value: null, options: [1,2,3,4,5,6] }
   ]
@@ -13,7 +13,7 @@ var example2 = {
   index: 2,
   description: "Perform a player substitution",
   scenario: '1',
-  fields: [
+  editable_fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
     { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]
@@ -23,7 +23,7 @@ var example3 = {
   index: 3,
   description: "Set result",
   scenario: '1',
-  fields: [
+  editable_fields: [
     { name: "Home goals", value: 1 },
     { name: "Away goals", value: 2 }
   ]
@@ -33,7 +33,7 @@ var example4 = {
   index: 1,
   description: "Set minute",
   scenario: '2',
-  fields: [
+  editable_fields: [
     { name: "Minute", value: "90" },
   ]
 };
@@ -42,7 +42,7 @@ var example5 = {
   index: 2,
   description: "Add extra time",
   scenario: '2',
-  fields: [
+  editable_fields: [
     { name: "Extra minutes", value: "5" },
   ]
 };
@@ -51,7 +51,7 @@ var example6 = {
   index: 1,
   description: "Perform substituion in a given minute",
   scenario: '3',
-  fields: [
+  editable_fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
     { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
     { name: "Minute", value: 55 }

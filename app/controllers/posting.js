@@ -14,7 +14,7 @@ export default Ember.ArrayController.extend({
 
   // CPs
   currentScenario: function(){
-    return this.findBy('name', this.get('scenario'));
+    return this.findBy('description', this.get('scenario'));
   }.property('scenario'),
 
   currentExample: function(){
