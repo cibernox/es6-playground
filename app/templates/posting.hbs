@@ -26,15 +26,30 @@
 {{#if currentScenario}}
   <ul id="examples-nav" class="nav nav-pills nav-justified">
     {{#each currentScenario.examples}}
-      {{#link-to (query-params example=index) tagName="li"}}<a>Example {{index}}</a>{{/link-to}}
+      {{#link-to (query-params example=index) tagName="li"}}<a>Example {{index}} {{status-icon status}}</a>{{/link-to}}
     {{/each}}
   </ul>
 
   <div class="row example">
     <div class="well example-form">
-      <button class="btn btn-primary" {{action "runExample"}}>Run</button>
+      <button class="btn btn-success" {{action "runAdvance" currentExample}}>
+        Play
+        <div class="glyphicon glyphicon-play"></div>
+      </button>
+      <button class="btn btn-primary" {{action "run" currentExample}}>
+        Run
+        <div class="glyphicon glyphicon-record"></div>
+      </button>
+      <button class="btn btn-warning" {{action "advance"}}>
+        Skip
+        <div class="glyphicon glyphicon-step-forward"></div>
+      </button>
+      <button class="btn btn-default" {{action "back"}}>
+        Prev
+        <div class="glyphicon glyphicon-step-backward"></div>
+      </button>
       <h3>Example {{currentExample.index}}: {{currentExample.description}}</h3>
-      {{#each currentExample.editable_fields}}
+      {{#each currentExample.editableFields}}
         <div class="form-group">
           <label for="value">{{name}}</label>
           {{#if options}}
@@ -48,11 +63,7 @@
     <div class="well example-output">
       <h3>Result</h3>
       {{#if currentExample}}
-        {<br/>
-          {{#each currentExample.editable_fields}}
-            &nbsp;&nbsp;&nbsp;&nbsp;{{name}}: {{value}}, <br/>
-          {{/each}}
-        }<br/>
+        {{currentExample.output}}
       {{/if}}
     </div>
   </div>
