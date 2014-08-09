@@ -13,6 +13,8 @@ export default Ember.ArrayController.extend({
   ],
 
   // CPs
+  //
+
   currentScenario: function(){
     return this.findBy('description', this.get('scenario'));
   }.property('scenario'),
@@ -25,19 +27,24 @@ export default Ember.ArrayController.extend({
   }.property('currentScenario.examples.@each.index', 'example'),
 
   // Observers
+  //
+
   resetExampleIndex: function() {
     this.set('example', 1);
   }.observes('currentScenario'),
 
   // Actions
-  actions: {
+  //
 
+  actions: {
     // Runs the given example.
+    //
     run: function(example){
       example.save();
     },
 
-    // Runs the given example and advances to the next one (if any)
+    // Runs the given example and advances to the next one (if any).
+    //
     runAdvance: function(example){
       var ctrl = this;
       example.save().finally(function(){
@@ -45,14 +52,16 @@ export default Ember.ArrayController.extend({
       });
     },
 
-    // Advances to the next example
+    // Advances to the next example.
+    //
     advance: function(){
       if (this.get('currentScenario.examples.length') > this.get('example')) {
         this.incrementProperty('example');
       }
     },
 
-    // Goes back to the previous example
+    // Goes back to the previous example.
+    //
     back: function(){
       if (this.get('example') > 1) {
         this.decrementProperty('example');
