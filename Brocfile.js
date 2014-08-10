@@ -16,11 +16,17 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
-
-app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
   destDir: 'fonts'
+});
+app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js');
+app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js', {
+  exports: {
+    'EmberCPM': [
+      'ember-cpm'
+    ]
+  }
 });
 
 module.exports = app.toTree();

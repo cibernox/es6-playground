@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Handlebars.makeBoundHelper(function(status) {
-  var icon, color;
+  var icon;
   if (status === 'pending') {
     icon = 'question-sign';
   } else if (status === 'success') {

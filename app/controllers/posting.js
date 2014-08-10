@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import EmberCPM from 'vendor/ember-cpm/dist/amd/ember-cpm';
 
 export default Ember.ArrayController.extend({
   queryParams: ['environment', 'scenario', 'example'],
@@ -18,6 +19,8 @@ export default Ember.ArrayController.extend({
   currentScenario: function(){
     return this.findBy('description', this.get('scenario'));
   }.property('scenario'),
+
+  testSafeString: EmberCPM.Macros.safeString('<label>label!!!</label>'),
 
   currentExample: function(){
     var exampleIndex = parseInt(this.get('example')) || 1,
