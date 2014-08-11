@@ -20,8 +20,8 @@ export default Ember.ArrayController.extend({
     return this.findBy('description', this.get('scenario'));
   }.property('scenario'),
 
-      testSafeString: EmberCPM.Macros.concat('<label>label!!!</label>'),
-  // testSafeString: concat('<label>label!!!</label>', "cacacaca"),
+  sampleHtml: '<label>label!!!</label>',
+  testSafeString: EmberCPM.Macros.htmlEscape('sampleHtml'),
 
   currentExample: function(){
     var exampleIndex = parseInt(this.get('example')) || 1,
