@@ -20,13 +20,27 @@ app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
   destDir: 'fonts'
 });
-app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js');
-app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js', {
-  exports: {
-    'EmberCPM': [
-      'ember-cpm'
-    ]
-  }
-});
+// app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js');
+// app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js', {
+//   exports: {
+//     'ember-cpm': [
+//       // 'default',
+//       'among',
+//       'concat',
+//       // 'encode-uri-component',
+//       // 'encode-uri',
+//       // 'fmt',
+//       // 'html-escape',
+//       // 'if-null',
+//       // 'join',
+//       // 'not-among',
+//       // 'not-equal',
+//       // 'not-match',
+//       // 'promise',
+//       // 'safe-string',
+//       // 'sum-by',
+//     ]
+//   }
+// });
 
 module.exports = app.toTree();

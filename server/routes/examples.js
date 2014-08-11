@@ -76,11 +76,45 @@ var example7 = {
   status: 'pending',
   output: null,
   scenario_id: '4',
-  fields: [
+  editable_fields: [
     { name: "Classification", value: "1" }
   ]
 };
-var examples = [example1, example2, example3, example4, example5, example6, example7]
+var example8 = {
+  id: '8',
+  index: 4,
+  description: "Penalty shot",
+  status: 'pending',
+  output: null,
+  scenario_id: '1',
+  editable_fields: [
+    { name: "Scorer", value: "Cristiano", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
+  ]
+};
+var example9 = {
+  id: '9',
+  index: 5,
+  description: "Freekick shot",
+  status: 'pending',
+  output: null,
+  scenario_id: '1',
+  editable_fields: [
+    { name: "Shooter", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
+  ]
+};
+var example10 = {
+  id: '10',
+  index: 6,
+  description: "Injure a player",
+  status: 'pending',
+  output: null,
+  scenario_id: '1',
+  editable_fields: [
+    { name: "Injured player", value: "De Boer", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
+  ]
+};
+
+var examples = [example1, example2, example3, example4, example5, example6, example7, example8, example9, example10]
 
 module.exports = function(app) {
   var express = require('express');
@@ -105,9 +139,21 @@ module.exports = function(app) {
 
   examplesRouter.put('/:id', function(req, res) {
     var example = examples.filter(function(ex) { return ex.id === req.params.id })[0];
+    var editableFields = req.body.example.editable_fields;
     if (example.index%2 === 0) {
       example.status = 'success';
-      example.output = '<dummy>testing xml at '+new Date()+'</dummy>';
+      example.editableFields = editableFields;
+      // START- Generate some fake xml output
+      example.output = '<example>\n'
+      var len = editableFields.length,
+        field;
+      for (var i = 0; i < len; i++) {
+        field = editableFields[i];
+        example.output += '  <'+field.name.replace(' ', '_')+'>'+field.value+'</'+field.name.replace(' ', '_')+'>\n'
+      }
+      example.output += '  <date>'+new Date()+'</date>\n'
+      example.output +='</example>';
+      // END - Generate some fake xml output
     } else {
       example.status = 'fail';
       example.output = 'Error 500 bla bla at '+new Date();
