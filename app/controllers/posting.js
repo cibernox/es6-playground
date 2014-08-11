@@ -1,5 +1,5 @@
 import Ember from 'ember';
-// import concat from 'vendor/ember-cpm/dist/named-amd/ember-cpm';
+import EmberCPM from 'vendor/ember-cpm/dist/named-amd/ember-cpm';
 
 export default Ember.ArrayController.extend({
   queryParams: ['environment', 'scenario', 'example'],
@@ -20,7 +20,7 @@ export default Ember.ArrayController.extend({
     return this.findBy('description', this.get('scenario'));
   }.property('scenario'),
 
-  // testSafeString: EmberCPMconcat('<label>label!!!</label>'),
+      testSafeString: EmberCPM.Macros.concat('<label>label!!!</label>'),
   // testSafeString: concat('<label>label!!!</label>', "cacacaca"),
 
   currentExample: function(){

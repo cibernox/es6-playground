@@ -20,7 +20,7 @@ app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
   destDir: 'fonts'
 });
-// app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js');
+app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js');
 // app.import('vendor/ember-cpm/dist/named-amd/ember-cpm.js', {
 //   exports: {
 //     'ember-cpm': [
