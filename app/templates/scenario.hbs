@@ -1,0 +1,7 @@
+<ul id="examples-nav" class="nav nav-pills nav-justified">
+  {{#each examples}}
+    {{#link-to "scenario.example" this tagName="li"}}<a>Example {{index}} {{status-icon status}}</a>{{/link-to}}
+  {{/each}}
+</ul>
+
+{{outlet}}

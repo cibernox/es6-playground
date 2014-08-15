@@ -5,7 +5,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('posting');
+  this.resource('scenarios', function(){
+    this.resource('scenario', { path: '/:scenario_id' }, function(){
+      this.route('example', { path: '/:example_id' });
+    });
+  });
   this.route('preview');
 });
 
