@@ -1,68 +1,68 @@
 var example1 = {
-  id: '1',
+  id: 'change-player-name',
   index: 1,
   description: "Change player name",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Name", value: "John" },
     { name: "Age", value: null, options: [1,2,3,4,5,6] }
   ]
 };
 var example2 = {
-  id: '2',
+  id: 'perform-a-player-substitution',
   index: 2,
   description: "Perform a player substitution",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
     { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]
 };
 var example3 = {
-  id: '3',
+  id: 'set-result',
   index: 3,
   description: "Set result",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Home goals", value: 1 },
     { name: "Away goals", value: 2 }
   ]
 };
 var example4 = {
-  id: '4',
+  id: 'set-minute',
   index: 1,
   description: "Set minute",
   status: 'pending',
   output: null,
-  scenario_id: '2',
+  scenario_id: 'english-premier-league',
   editable_fields: [
     { name: "Minute", value: "90" },
   ]
 };
 var example5 = {
-  id: '5',
+  id: 'add-extra-time',
   index: 2,
   description: "Add extra time",
   status: 'pending',
   output: null,
-  scenario_id: '2',
+  scenario_id: 'english-premier-league',
   editable_fields: [
     { name: "Extra minutes", value: "5" },
   ]
 };
 var example6 = {
-  id: '6',
+  id: 'perform-substituion-in-a-given-minute',
   index: 1,
   description: "Perform substituion in a given minute",
   status: 'pending',
   output: null,
-  scenario_id: '3',
+  scenario_id: 'world-cup-competition',
   editable_fields: [
     { name: "Player in", value: "Romario", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
     { name: "Player out", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] },
@@ -70,45 +70,45 @@ var example6 = {
   ]
 };
 var example7 = {
-  id: '7',
+  id: 'set-classification',
   index: 1,
   description: "Set classification",
   status: 'pending',
   output: null,
-  scenario_id: '4',
+  scenario_id: 'world-cup-match',
   editable_fields: [
     { name: "Classification", value: "1" }
   ]
 };
 var example8 = {
-  id: '8',
+  id: 'penalty-shot',
   index: 4,
   description: "Penalty shot",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Scorer", value: "Cristiano", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]
 };
 var example9 = {
-  id: '9',
+  id: 'freekick-shot',
   index: 5,
   description: "Freekick shot",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Shooter", value: "Caca", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]
 };
 var example10 = {
-  id: '10',
+  id: 'injure-a-player',
   index: 6,
   description: "Injure a player",
   status: 'pending',
   output: null,
-  scenario_id: '1',
+  scenario_id: 'cricket-fixtures',
   editable_fields: [
     { name: "Injured player", value: "De Boer", options: ["Romario", "Caca", "De Boer", "Cristiano"] }
   ]

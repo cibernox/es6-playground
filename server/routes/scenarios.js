@@ -4,10 +4,26 @@ module.exports = function(app) {
   scenariosRouter.get('/', function(req, res) {
     res.send({
       scenarios: [
-        { id: '1', description: "cricket_fixtures.rb", example_ids: [1,2,3,8,9,10] },
-        { id: '2', description: "english_premier_league.rb", example_ids: [4, 5] },
-        { id: '3', description: "world_cup_competition.rb", example_ids: [6] },
-        { id: '4', description: "world_cup_match.rb", example_ids: [7] }
+        {
+          id: 'cricket-fixtures',
+          description: "cricket_fixtures.rb",
+          example_ids: ['change-player-name','perform-a-player-substitution','set-result','penalty-shot','freekick-shot','injure-a-player']
+        },
+        {
+          id: 'english-premier-league',
+          description: "english_premier_league.rb",
+          example_ids: ['set-minute', 'add-extra-time']
+        },
+        {
+          id: 'world-cup-competition',
+          description: "world_cup_competition.rb",
+          example_ids: ['perform-substituion-in-a-given-minute']
+        },
+        {
+          id: 'world-cup-match',
+          description: "world_cup_match.rb",
+          example_ids: ['set-classification']
+        }
       ]
     });
   });
