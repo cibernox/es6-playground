@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
   environment: null,
-  scenario: null,
   environments: [
     { id: 'uat', value: 'http://localhost:5000' },
     { id: 'dev', value: 'http://localhost:5000' },
@@ -13,11 +12,11 @@ export default Ember.ArrayController.extend({
   // Observers
   //
   currentScenarioObserver: function(){
-    var scenario = this.get('scenario');
-    if (scenario) {
-      this.transitionToRoute("scenario", scenario);
+    var scenarioId = this.get('content.selected');
+    if (scenarioId) {
+      this.transitionToRoute("scenario", scenarioId);
     } else {
       this.transitionToRoute("scenarios");
     }
-  }.observes('scenario')
+  }.observes('content.selected')
 });

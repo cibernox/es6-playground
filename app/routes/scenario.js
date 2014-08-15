@@ -2,6 +2,12 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
   actions: {
+    // Sets the scenario of the controller of the parent route.
+    //
+    didTransition: function() {
+      this.modelFor("scenarios").set("selected", this.context.get('id'));
+    },
+
     // Advances to the next example in this scenario.
     //
     advance: function(currentExample){

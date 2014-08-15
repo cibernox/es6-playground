@@ -13,8 +13,8 @@
     <label for="scenario">Scenario:</label>
     {{view Ember.Select content=this
       optionLabelPath="content.description"
-      optionValuePath="content"
-      value=scenario
+      optionValuePath="content.id"
+      value=content.selected
       prompt="--- Please select a scenario ---"
       class="form-control"}}
   </div>
