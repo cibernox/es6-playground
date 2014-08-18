@@ -1,11 +1,11 @@
 <div id="posting-config" class="row">
   <div class="col-sm-4 form-group">
-    <label for="host">Environment:</label>
-    {{view Ember.Select content=environments
+    <label for="host">Endpoints:</label>
+    {{view Ember.Select content=endpoints
       optionValuePath="content.id"
       optionLabelPath="content.id"
-      value=environment
-      prompt="--- Please select a environment ---"
+      value=endpoint
+      prompt="--- Please select a endpoint ---"
       class="form-control"
     }}
   </div>
@@ -17,9 +17,6 @@
       value=content.selected
       prompt="--- Please select a scenario ---"
       class="form-control"}}
-  </div>
-  <div class="col-sm-4">
-    <button class="btn btn-primary btn-lg btn-block" {{action "start"}}>Start</button>
   </div>
 </div>
 
