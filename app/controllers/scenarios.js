@@ -18,6 +18,6 @@ export default Ember.ArrayController.extend({
   endpointObserver: function(){
     var id = this.get('endpoint');
     var endpoint = this.get('endpoints').find(function(e){ return e.id === id; });
-    this.containter.lookup('adapter:application').set('host', endpoint.value);
+    this.container.lookup('adapter:application').set('host', endpoint.value);
   }.observes('endpoint')
 });
