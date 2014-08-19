@@ -1,7 +1,7 @@
 <div id="posting-config" class="row">
   <div class="col-sm-4 form-group">
     <label for="host">Endpoints:</label>
-    {{view Ember.Select content=endpoints
+    {{view "select" content=endpoints
       optionValuePath="content.id"
       optionLabelPath="content.id"
       value=endpoint
@@ -11,7 +11,7 @@
   </div>
   <div class="col-sm-4 form-group">
     <label for="scenario">Scenario:</label>
-    {{view Ember.Select content=this
+    {{view "select" content=this
       optionLabelPath="content.description"
       optionValuePath="content.id"
       value=content.selected
