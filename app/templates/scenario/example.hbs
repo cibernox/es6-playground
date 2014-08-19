@@ -21,7 +21,7 @@
       <div class="form-group">
         <label for="value">{{name}}</label>
         {{#if options}}
-          {{view Ember.Select content=options value=value class="form-control"}}
+          {{view "select" content=options value=value class="form-control"}}
         {{else}}
           {{input value=value class="form-control"}}
         {{/if}}
